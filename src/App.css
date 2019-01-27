@@ -1,0 +1,65 @@
+:root {
+  --navBlue:#086788;
+  --mainBlue: #0b779b;
+  --lightBlue:#1f99c2;
+  --mainWhite:#f3f3f3;
+  --mainDark:#232528;
+  --mainRed: rgb(156, 41, 41);
+  --mainYellow:#ffa400;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--mainBlue) !important;
+  color: var(--mainWhite) !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.text-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: var(--mainRed);
+}
+
+.text-dark {
+  color: var(--mainDark);
+}
+
+.text-bright {
+  color: var(--mainYellow);
+}
+
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--mainDark);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--mainDark) !important;
+}
+
+.btn-black:hover {
+  background: var(--mainDark) !important;
+  color: var(--mainWhite) !important;
+}
+
+.btn-container {
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.jumbotron {
+  background: var(--mainWhite) !important;
+  font-family: 'Raleway', sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
