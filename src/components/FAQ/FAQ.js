@@ -4,7 +4,7 @@ class FAQ extends Component {
     render() {
         return (
             <div className="container">
-                <div className="card mt-2">
+                <div className="card mt-2 p-0">
                     <div className="card-footer">
                         <h3>Preguntas Frecuentes</h3>
                     </div>

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import Techs from '../Techs/Techs';
 import FAQ from '../FAQ/FAQ';
+import OurClients from '../OurClients/OurClients';
 
 import logo from '../../images/bigSlick4.png';
 
@@ -33,6 +34,7 @@ class Home extends Component {
                     />
                     <Techs />
                     <FAQ />
+                    <OurClients />
                 </HomeContainer>
             </React.Fragment>
         );
