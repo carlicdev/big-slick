@@ -23,12 +23,6 @@ class Contact extends Component {
     this.setState({sent: true});
     e.preventDefault();
     const { name, phone, email, message } = this.state;
-    const form = await axios.post('/api/form', {
-      name,
-      phone,
-      email,
-      message
-    });
   }
 
   handleChange = e => {
@@ -59,7 +53,7 @@ class Contact extends Component {
             </div>
             <div className="col-md-8 white-background p-5">
             <h4 className="text-left">Contacto</h4>
-            <form onSubmit={this.handleSubmit}>
+            <form name="contact" method="POST" data-netlify="true" onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="col-md-6">
                 <div className="form-group mb-2 p-1">
@@ -113,7 +107,7 @@ class Contact extends Component {
                       >
                   </textarea>
                 </div>
-                <ButtonContainer type="submit">Enviar</ButtonContainer>
+                <ButtonContainer type="submit" className="col-12">Enviar</ButtonContainer>
             </form>
             </div>
           </div>

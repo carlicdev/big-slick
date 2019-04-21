@@ -7,7 +7,7 @@ import logo from '../../images/bigSlick7.png';
 class NavBar extends Component {
     render() {
         return (
-            <NavWrapper className="navbar fixed-top navbar-dark bg-primary navbar-expand-sm px-sm-5 row justify-content-between">
+            <NavWrapper className="navbar fixed-top navbar-dark bg-primary navbar-expand-lg px-sm-5 row justify-content-between">
 
               <div className="col-4">
                 <Link to="/">
