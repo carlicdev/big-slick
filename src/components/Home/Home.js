@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Jumbotron from '../Jumbotron/Jumbotron';
 import Techs from '../Techs/Techs';
+import FAQ from '../FAQ/FAQ';
 
 import logo from '../../images/bigSlick4.png';
 
@@ -31,8 +32,7 @@ class Home extends Component {
                         link="projects"
                     />
                     <Techs />
-                    <div className="parallax2">
-                    </div>
+                    <FAQ />
                 </HomeContainer>
             </React.Fragment>
         );

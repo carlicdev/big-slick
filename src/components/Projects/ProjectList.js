@@ -6,7 +6,6 @@ import { ProjectConsumer } from '../../context'
 import Jumbotron from '../Jumbotron/Jumbotron';
 import Project from '../Projects/Project';
 import logo from '../../images/bigSlick4.png';
-import Title from '../Title/Title';
 
 
 class ProjectList extends Component {
@@ -15,16 +14,15 @@ class ProjectList extends Component {
             <React.Fragment>
             <ProjectsContainer>
                 <div className="separator"></div>
-                            <Title name="nuestro" title="Portafolio" />
-                        <div className="img-container-4 m-auto">
-                            <img src={logo} alt="logo" className="img-fluid" />
-                        </div>
                         <Jumbotron  
                             text1="En esta sección mostramos algunos de nuestros proyectos para que puedas darte una idea de las caracteristicas que podrias incluir en tu sitio o aplicación."
                             text2="Cada proyecto incluye una breve reseña del sitio o aplicación asi como las tecnologias usadas para su desarrollo."
                             text3="Si quieres implementar alguna caracteristica de nuestros proyectos en algun proyecto ya existente no dudes en contactarnos."
                             buttonText="contacto"
                         />
+                        <div className="img-container-4 m-auto">
+                            <img src={logo} alt="logo" className="img-fluid" />
+                        </div>
                     <div className="container">
                         <div className="row">
                            <ProjectConsumer>
