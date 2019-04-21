@@ -21,7 +21,7 @@ class Techs extends Component {
             <div className="py-5">
             <div classname="container">
             <div className="row">
-              <div className="col-9 mx-auto text-center col-md-6 col-lg-3 my-3">
+              <div className="col-10 mx-auto text-center col-md-5 col-lg-3 my-3">
                 <div className="card">
                 <div className="card-footer">
                 Desarrollo
@@ -34,7 +34,7 @@ class Techs extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-9 mx-auto text-center col-md-6 col-lg-3 my-3">
+              <div className="col-10 mx-auto text-center col-md-5 col-lg-3 my-3">
                 <div className="card">
                 <div className="card-footer">
                   Diseño
@@ -47,7 +47,7 @@ class Techs extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-9 mx-auto text-center col-md-6 col-lg-3 my-3">
+              <div className="col-10 mx-auto text-center col-md-5 col-lg-3 my-3">
                 <div className="card">
                 <div className="card-footer">
                 Servidores y Bases de Datos

@@ -1,8 +1,9 @@
 :root {
-  --navBlue:#086788;
+  --navBlue:#108bb4;
   --mainBlue: #0b779b;
   --lightBlue:#1f99c2;
   --mainWhite:#f3f3f3;
+  --alternativeWhite: #e0e0e0;
   --mainDark:#232528;
   --mainRed: rgb(156, 41, 41);
   --mainYellow:#ffa400;
@@ -10,7 +11,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: var(--mainBlue) !important;
+  background: var(--mainWhite) !important;
   color: var(--mainWhite) !important;
   display: flex;
   min-height: 100vh;
@@ -18,13 +19,12 @@ body {
 }
 
 .text-title {
-  font-family: 'Gloria Hallelujah', cursive;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
 .text-blue {
-  color: var(--mainRed);
+  color: var(--mainBlue);
 }
 
 .text-dark {
@@ -57,9 +57,93 @@ body {
 
 .jumbotron {
   background: var(--mainWhite) !important;
+  color: var(--mainDark);
   font-family: 'Raleway', sans-serif;
 }
 
 main {
   flex: 1 0 auto;
+}
+
+.light-background {
+  background: var(--lightBlue);
+}
+
+.white-background {
+  background: var(--alternativeWhite);
+  color: var(--mainDark);
+  text-align: left;
+}
+
+.separator {
+  height: 80px;
+}
+
+.parallax {
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-1 {
+  background-image: url('./images/contacto1.jpeg');
+}
+
+.section-2 {
+  background-image: url('./images/webdevelopment.jpeg') !important;
+}
+
+
+
+.parallax2 {
+  height: 700px;
+  background-image: url('./images/webdevelopment.jpeg') !important;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax3 {
+  height: 500px;
+  background-image: url('./images/cont.jpeg') !important;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img-container2 {
+  width: 4rem;
+  height: 3rem;
+}
+
+.img-container-3 {
+  width: 8rem;
+  height: 8rem;
+}
+
+.img-container-4 {
+  width: 10rem;
+  height: 10rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-emphasis: none;
+  text-decoration: none;
+  color: var(--mainWhite) !important;
+}
+
+.copyright {
+  color: #33729c;
+}
+
+.project {
+  height: 15rem;
 }

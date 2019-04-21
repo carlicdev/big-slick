@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import logo from '../NavBar/logos/mini-logo.png';
+import logo from '../../images/bigSlick7.png';
 
 class NavBar extends Component {
     render() {
@@ -11,7 +11,9 @@ class NavBar extends Component {
 
               <div className="col-4">
                 <Link to="/">
-                  <img src={logo} alt="logo" />
+                  <div className="img-container2">
+                      <img src={logo} alt="logo" className="img-fluid" />
+                  </div>
                 </Link>
               </div>
               <div className="col-4">

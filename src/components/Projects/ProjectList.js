@@ -3,11 +3,10 @@ import styled from 'styled-components';
 
 import { ProjectConsumer } from '../../context'
 
-import NavBar from '../NavBar/NavBar';
-import Footer from '../Footer/Footer';
-import Title from '../Title/Title';
+import Jumbotron from '../Jumbotron/Jumbotron';
 import Project from '../Projects/Project';
-import SubTitle from '../Title/SubTitle';
+import logo from '../../images/bigSlick4.png';
+import Title from '../Title/Title';
 
 
 class ProjectList extends Component {
@@ -15,15 +14,18 @@ class ProjectList extends Component {
         return (
             <React.Fragment>
             <ProjectsContainer>
-                <NavBar />
-                <div className="row">
-                  <div className="col-12 text-center">
-                <SubTitle name="big" title="Slick" />
-                  </div>
-                </div>
-                <div className="py-5">
+                <div className="separator"></div>
+                            <Title name="nuestro" title="Portafolio" />
+                        <div className="img-container-4 m-auto">
+                            <img src={logo} alt="logo" className="img-fluid" />
+                        </div>
+                        <Jumbotron  
+                            text1="En esta sección mostramos algunos de nuestros proyectos para que puedas darte una idea de las caracteristicas que podrias incluir en tu sitio o aplicación."
+                            text2="Cada proyecto incluye una breve reseña del sitio o aplicación asi como las tecnologias usadas para su desarrollo."
+                            text3="Si quieres implementar alguna caracteristica de nuestros proyectos en algun proyecto ya existente no dudes en contactarnos."
+                            buttonText="contacto"
+                        />
                     <div className="container">
-                        <Title name="portafolio"  />
                         <div className="row">
                            <ProjectConsumer>
                                {(value) => {
@@ -33,10 +35,8 @@ class ProjectList extends Component {
                                }}
                            </ProjectConsumer>
                         </div>
-                    </div>
-                </div>
+                    </div>      
             </ProjectsContainer>
-            <Footer />
             </React.Fragment>
         );
     }
@@ -47,7 +47,6 @@ background: var(--mainWhite);
 color: var(--mainDark);
 width: 100%;
 height: cover;
-padding: 7rem;
 .img-container {
     transition: all 0.5s ease-in-out;
 }

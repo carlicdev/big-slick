@@ -22,11 +22,10 @@ class Modal extends Component {
                             <div className="container">
                                 <div className="row">
                                     <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
-                                        <h5>{title}</h5>
                                         <img src={img} className="img-fluid" alt="project" />
                                                                         {/* project text */}
                                     <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                                         <span className="text-uppercase">{company}</span>
+                                         <span className="text-uppercase">{title}</span>
                                     </h4>
                                     <p className="text-muted lead">{info}</p>
                                         <Link to="/projects">

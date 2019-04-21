@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import SubTitle from '../Title/SubTitle';
+import logo from '../../images/bigSlick6.png';
 
 class Footer extends Component {
     render() {
         return (
             <div>
-        <FooterContainer className="page-footer">
+        <FooterContainer className=" mt-5">
           <div className="container">
             <div className="row">
-              <div className="col l6 s12">
-                <SubTitle name="big" title="Slick" />
-              </div>
-              <div className="col l4 offset-l2 s12">
-                <h5 className="white-text">Nuestros Aliados</h5>
+              <div className="col-md-9 text-left">
                 <ul>
+                  <li><h5>Nuestros Aliados</h5></li>
+                  <li><a href="http://www.dailystoic.com">The Daily Stoic</a></li>
+                  <li><a className="grey-text text-lighten-3" href="http://www.impactocapital.com">Impacto Capital</a></li>
                   <li><a className="grey-text text-lighten-3" href="http://www.dailystoic.com">dailystoic.com</a></li>
-                  <li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
                 </ul>
               </div>
-            </div>
-          </div>
-          <div className="footer-copyright">
-            <div className="container">
-            © 2019
-            <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
+              <div className="col-md-3 mt-3">
+                <div className="img-container img-container-3 m-auto">
+                    <img src={logo} alt="logo" className="img-fluid" />  
+                </div>
+              </div>
             </div>
           </div>
         </FooterContainer>
@@ -36,7 +33,7 @@ class Footer extends Component {
 
 const FooterContainer = styled.footer`
 background: var(--navBlue) !important;
-padding: 2rem;
+padding: 1rem;
 `
 
 export default Footer;

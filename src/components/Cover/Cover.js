@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
-
-import logo from '../Cover/logos/logo-bigSlick.png';
 import Title from '../Title/Title';
 import {ButtonContainer} from '../Button/Button';
 import fbMini from '../Cover/logos/fb-mini.png';
@@ -15,9 +13,7 @@ class Cover extends Component {
     render() {
         return (
             <CoverContainer>
-                <Image>
-                   <img src={logo} alt="logo" />
-                </Image>
+               
                 <Title name="Big" title="Slick" />
                 <Title name=".web" title="Development" />
                 <div className="btn-container">
@@ -58,7 +54,7 @@ class Cover extends Component {
 }
 
 const CoverContainer = styled.div`
- background: var(--mainBlue);
+ background: var(--mainWhite);
  background-image: linear-gradient(90deg,
   #1885aa, #1190bb, #0f9fcf, #0f8fb9,
   #0a789c, #0f7597 #1d7490 #3e7c90

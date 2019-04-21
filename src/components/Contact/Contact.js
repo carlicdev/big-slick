@@ -1,139 +1,126 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 
-import NavBar from '../NavBar/NavBar';
-import Footer from '../Footer/Footer';
-import SubTitle from '../Title/SubTitle';
-import {ButtonContainer} from '../Button/Button';
+import axios from 'axios';
 
-import contactoImg from '../Contact/img/contacto.jpeg';
+import { ButtonContainer } from '../Button/Button';
+import logo from '../../images/bigSlick4.png';
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      phone: '',
+      email: '',
+      message: '',
+      sent: false
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    handleSubmit(e) {
-        fetch('/api/contact', { 
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
-           .then(res => res.json())
-           .then(data => {
-               console.log(data);
-               this.setState({ 
-                  name: '',
-                  email: '',
-                  message: ''
-                    });
-           })
-           .catch(err => console.error(err));
-        e.preventDefault();
-    }
+  async handleSubmit(e) {
+    this.setState({sent: true});
+    e.preventDefault();
+    const { name, phone, email, message } = this.state;
+    const form = await axios.post('/api/form', {
+      name,
+      phone,
+      email,
+      message
+    });
+  }
 
-    handleChange(e) {
-        const { name, value } = e.target;
-        this.setState({
-            [name]: value
-        });
-    }
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
 
-    render() {
-        return (
-            <React.Fragment>
-            <ContactContainer>
-                <NavBar />
-                <div className="jumbotron text-center">
-                  <SubTitle name="big" title="Slick" />
-                  <hr className="my-4"/>
-                  <h4><strong>Trabajemos juntos!</strong></h4>
-                  <p className="lead"></p>
-                  <p className="lead">Permítenos saber mas sobre tu proyecto. Ya sea que necesites desarrollarlo desde cero, tengas algo empezado o solo necesites mantenimiento para tu página o aplicación, estaremos encantados de servirte. </p>
-                  <hr className="my-4"/>
+  render() {
+    return (
+      <div className="text-center">
+        <div className="separator"></div>
+        <div className="parallax3 mb-5">
+        </div>
+          <div className="container">
+          <div className="row">
+            <div className="col-md-4 light-background p-3">
+            <div className="img-container m-auto">
+                <img src={logo} alt="logo" className="img-fluid" />
+            </div>
+              <ul className="mt-5">
+                  <li className="p-1 text-left"><span className="mr-2"><i className="fab fa-whatsapp"></i></span> 55-55-55-55</li>
+                  <li className="p-1 text-left"><span className="mr-2"><i className="fa fa-phone"></i></span> (015) 555-55-55</li>
+                  <li className="p-1 text-left"><span className="mr-2"><i className="fas fa-envelope"></i></span> bigslick.dev@gmail.com</li>
+              </ul>
+
+            </div>
+            <div className="col-md-8 white-background p-5">
+            <h4 className="text-left">Contacto</h4>
+            <form onSubmit={this.handleSubmit}>
+            <div className="row">
+              <div className="col-md-6">
+                <div className="form-group mb-2 p-1">
+                  <label htmlFor="name">Nombre</label>
+                  <input 
+                      type="text" 
+                      className="form-control" 
+                      name="name"
+                      onChange={this.handleChange}
+                      value={this.state.name} 
+                      placeholder="Nombre">
+                  </input>
                 </div>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-9 mx-auto col-md-6 col-lg-4 my-3">
-                      <div className="img-container my-2">
-                        <img src={contactoImg} alt="contacto" className="card-img-top" />
-                      </div>
-                      <div className="card text-center p-5">
-                        <h6><strong>Telefono:</strong> 12-34-56-78</h6>
-                        <h6><strong>WhatsApp:</strong> 12-34-56-78</h6>
-                        <h6><strong>Correo electrónico:</strong> test@tester.com</h6>
-                      </div>
-                    </div>
-                   <div className="col-9 mx-auto col-md-6 col-lg-4 my-3">
-                     <div class="row myform">
-                       <form className="col s12" onSubmit={this.handleSubmit}>
-                         <div className="row">
-                           <label htmlFor="name">
-                           Nombre completo
-                             <input 
-                                 name="name"
-                                 onChange={this.handleChange}
-                                 value={this.state.name}
-                                 type="text">
-                             </input>
-                           </label>
-                           <label htmlFor="email">
-                           Correo electrónico
-                             <input
-                                 name="email"
-                                 onChange={this.handleChange}
-                                 value={this.state.email}
-                                 type="text">
-                             </input>
-                           </label>
-                           <label htmlFor="message">Mensaje
-                             <textarea className="textarea col-12 img-fluid " 
-                                 name="message"
-                                 onChange={this.handleChange}
-                                 value={this.state.message}
-                                 type="text">
-                             </textarea>
-                           </label>
-                           <ButtonContainer type="submit">
-                               enviar
-                           </ButtonContainer>
-                         </div>
-                       </form>
-                     </div>
-                   </div>
-                  </div>   
+              </div>
+              <div className="col-md-6">
+                <div className="form-group mb-2 p-1">
+                  <label htmlFor="phone">Teléfono</label>
+                  <input 
+                      type="text" 
+                      className="form-control" 
+                      name="phone" 
+                      onChange={this.handleChange}
+                      value={this.state.phone} 
+                      placeholder="Teléfono o celular">
+                  </input>
+                  <small id="phone" className="form-text text-muted">*opcional</small>
                 </div>
-            </ContactContainer>
-            <Footer />
-            </React.Fragment>
-        );
-    }
+              </div>
+            </div>
+                <div className="form-group p-1">
+                  <label htmlFor="email">Correo electrónico</label>
+                  <input 
+                      type="email" 
+                      className="form-control" 
+                      name="email" 
+                      onChange={this.handleChange}
+                      value={this.state.email} 
+                      placeholder="Email">
+                  </input>
+                  <small id="email" className="form-text text-muted">Ingresa un correo electrónico válido para poder contactarte.</small>
+                </div>
+                <div className="form-group p-1">
+                  <label htmlFor="message">Mensaje</label>
+                  <textarea 
+                      className="form-control" 
+                      name="message" 
+                      onChange={this.handleChange}
+                      value={this.state.message} 
+                      rows="5"
+                      placeholder="Cuentanos sobre tu proyecto"
+                      >
+                  </textarea>
+                </div>
+                <ButtonContainer type="submit">Enviar</ButtonContainer>
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    );
+  }
 }
 
-const ContactContainer = styled.div`
-background: var(--mainWhite);
-color: var(--mainDark);
- width: 100%;
- height: cover;
- padding: 7rem;
-.myform {
-    padding: 2rem;
-    background: var(--mainBlue);
-}
-.textarea {
-    width: 20rem;
-    height: 15rem;
-    background: var(--mainWhite);
-}
-`;
 export default Contact;

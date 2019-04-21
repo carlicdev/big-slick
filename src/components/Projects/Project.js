@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { ProjectConsumer } from '../../context';
 import PropTypes from 'prop-types';
 
@@ -8,15 +7,15 @@ class Product extends Component {
     render() {
         const {id, title, img } = this.props.project;
         return (
-            <ProjectWrapper className="col-9 mx-auto col-md-6 col-lg-4 my-3">
+            <ProjectWrapper className="col-12 mx-auto col-md-6 col-lg-4 my-3">
                 <div className="card">
                 <ProjectConsumer>
                     {(value) => (
-                   <div className="img-container p-5" 
+                   <div className="img-container project p-1" 
                         onClick={() => {
                             value.handleDetail(id);
                         }}>
-                       <img src={img} alt="project" className="card-img-top"/>
+                       <img src={img} alt="project" className="card-img-top project"/>
                    
                    <button 
                        className="project-btn"  
@@ -79,7 +78,7 @@ const ProjectWrapper = styled.div`
         transition: all 0.5s linear;
     }
     .img-container:hover .card-img-top {
-        transform: scale(1.2);
+        transform: scale(1.4);
     }
     .project-btn {
         position: absolute;
@@ -104,25 +103,4 @@ const ProjectWrapper = styled.div`
     }
 `;
 
-const ProjectsContainer = styled.div`
-background: var(--mainWhite);
-color: var(--mainDark);
-width: 100%;
-height: cover;
-padding: 7rem;
-.img-container {
-    transition: all 0.5s ease-in-out;
-}
-.img-container:hover {
-    transform: scale(1.4);
-}
-.card {
-   border-color: transparent;
-   transition: all 0.5s linear;
-}
-.card-footer {
-   border-top: transparent;
-   transition: all 0.5s linear;
-}
-`;
 export default Product;
